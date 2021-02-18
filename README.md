@@ -42,7 +42,7 @@ In the project directory, run:
 Serverless will now attempt to access your secrets, decrypt them, and deploy your stack with the secrets in the lambda environment they are needed in.  
 By default serverless will use the stage "dev" when deploying the stack
 
-After a (long) while your cloudFormation will have been created and run, and if you look in your AWS console you should see your freshly created S3 buckets, dynamoDb table, Lambdas, Api Gateway and cloudFront distribution.
+After a (long) while your cloudFormation will have been created and run, and if you look in your AWS console you should see your freshly created S3 buckets, Lambdas, Api Gateway and cloudFront distribution.
 You should also see log groups in cloudWatch.
 
 The Terminal output will show the ApiGateway end point for your function - you will need to add this to your React environment.
@@ -53,4 +53,10 @@ Infrastructure and API are now deployed.
 Now we can pull the [repository for the client app](https://github.com/j-bab/serverless-go-poc-client),
  configure it and deploy it to the app bucket we just created to serve from cloudFront
  
- 
+## Caveats
+*Authorisation*:  
+Using client credentials to authenticate with spotify prevents us from accessing any user related data, which is fine for the scope of this exercise.  
+However, the token provided by spotify is fetched on each invocation of the api.  
+It would be prudent to cache this token until it is invalid to improve performance.
+*Rate limiting*
+It would be sensible to handle the inaccessability of spotify due to rate limiting on the api more elegantly.
