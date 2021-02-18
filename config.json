@@ -1,0 +1,5 @@
+{
+  "serviceName": "spotify-pop-serverless",
+  "region": "eu-west-1",
+  "AwsAccountId": "AWS_ACCOUNT_ID"
+}
