@@ -2,7 +2,7 @@ import {
     success,
     failure
 } from "../lib/response";
-import search from "../lib/spotify";
+import {search} from "../lib/spotify";
 
 
 export async function main(event, context, callback) {
