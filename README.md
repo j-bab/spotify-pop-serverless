@@ -50,7 +50,7 @@ The Terminal output will show the ApiGateway end point for your function - you w
 ## Next steps
 Infrastructure and API are now deployed.  
 
-Now we can pull the [repository for the client app](https://github.com/j-bab/serverless-go-poc-client),
+Now we can pull the [repository for the client app](https://github.com/j-bab/spotify-pop-client),
  configure it and deploy it to the app bucket we just created to serve from cloudFront
  
 ## Caveats
